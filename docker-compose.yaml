@@ -27,6 +27,16 @@ services:
     depends_on:
       - db
 
+  fastapi:
+    build:
+      dockerfile: fastapi.Dockerfile
+    command: uvicorn app:app --reload --proxy-headers --host 0.0.0.0 --port 8000
+    container_name: fastapi
+    volumes:
+      - ./fastapi:/code
+    ports:
+      - "8000:8000"
+
 volumes:
   pg_data:
     driver: local
