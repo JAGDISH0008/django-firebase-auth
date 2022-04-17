@@ -1,2 +1,4 @@
 __pycache__
 django-firebase-auth-cred.json
+environment.env
+firebase.py
